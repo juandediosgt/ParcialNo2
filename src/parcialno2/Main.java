@@ -30,6 +30,8 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         btnCaidaLibre = new javax.swing.JButton();
+        btnCaidaLibre1 = new javax.swing.JButton();
+        btnCaidaLibre2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,10 +41,24 @@ public class Main extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         jLabel7.setText("Seleccione la opción segun el problema que desea realizar:");
 
-        btnCaidaLibre.setText("Caída Libre");
+        btnCaidaLibre.setText("CAIDA LIBRE");
         btnCaidaLibre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCaidaLibreActionPerformed(evt);
+            }
+        });
+
+        btnCaidaLibre1.setText("LANZAMIENTO HORIZONTAL");
+        btnCaidaLibre1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCaidaLibre1ActionPerformed(evt);
+            }
+        });
+
+        btnCaidaLibre2.setText("LANZAMIENTO VERTICAL");
+        btnCaidaLibre2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCaidaLibre2ActionPerformed(evt);
             }
         });
 
@@ -53,26 +69,33 @@ public class Main extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
+                        .addGap(150, 150, 150)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
+                        .addGap(47, 47, 47)
                         .addComponent(jLabel7))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
-                        .addComponent(btnCaidaLibre)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                        .addGap(149, 149, 149)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCaidaLibre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCaidaLibre1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCaidaLibre2, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addGap(18, 18, 18)
+                .addGap(43, 43, 43)
                 .addComponent(btnCaidaLibre)
-                .addContainerGap(366, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCaidaLibre1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCaidaLibre2)
+                .addContainerGap(292, Short.MAX_VALUE))
         );
 
         pack();
@@ -84,6 +107,19 @@ public class Main extends javax.swing.JFrame {
         hola.setVisible(true);
         
     }//GEN-LAST:event_btnCaidaLibreActionPerformed
+
+    private void btnCaidaLibre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaidaLibre1ActionPerformed
+        // TODO add your handling code here:
+        MainMPH mph = new MainMPH();
+        mph.setVisible(true);
+        
+    }//GEN-LAST:event_btnCaidaLibre1ActionPerformed
+
+    private void btnCaidaLibre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaidaLibre2ActionPerformed
+        // TODO add your handling code here:
+        MainMPV mph = new MainMPV();
+        mph.setVisible(true);
+    }//GEN-LAST:event_btnCaidaLibre2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,6 +158,8 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCaidaLibre;
+    private javax.swing.JButton btnCaidaLibre1;
+    private javax.swing.JButton btnCaidaLibre2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables

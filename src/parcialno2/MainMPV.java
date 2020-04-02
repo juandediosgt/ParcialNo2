@@ -5,6 +5,11 @@
  */
 package parcialno2;
 
+import static java.lang.Math.cos;
+import static java.lang.Math.sin;
+import static java.lang.Math.sqrt;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Juan de Dios
@@ -27,21 +32,528 @@ public class MainMPV extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txth = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txtVo = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        txtD = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtang = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        btnbucar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        txtVx = new javax.swing.JTextField();
+        txtVy = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        txtX = new javax.swing.JTextField();
+        txtY = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        txttv = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        txtts = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        txtvox = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        txtvoy = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        txtV = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel12.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel12.setText("m/s");
+
+        jLabel14.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel14.setText("m/s");
+
+        jLabel9.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel9.setText("m");
+
+        txth.setToolTipText("");
+        txth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txthActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel10.setText("m");
+
+        txtVo.setToolTipText("");
+        txtVo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtVoActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
+        jLabel1.setText("Lanzamiento Horizontal");
+
+        txtD.setToolTipText("");
+        txtD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel2.setText("Ingrese sus datos:");
+
+        txtang.setToolTipText("");
+        txtang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtangActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel3.setText("Vo=");
+
+        jLabel7.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel7.setText("m/s");
+
+        jLabel4.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel4.setText("Dmax=");
+
+        btnbucar.setText("             CALCULAR            ");
+        btnbucar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbucarActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel5.setText("ang = ");
+
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel8.setText("°");
+
+        jLabel6.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel6.setText("Hmax=");
+
+        jLabel11.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel11.setText("Vx =");
+
+        jLabel13.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel13.setText("Vy=");
+
+        txtVx.setToolTipText("");
+        txtVx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtVxActionPerformed(evt);
+            }
+        });
+
+        txtVy.setToolTipText("");
+        txtVy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtVyActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel15.setText("X =");
+
+        jLabel16.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel16.setText("Y=");
+
+        txtX.setToolTipText("");
+        txtX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtXActionPerformed(evt);
+            }
+        });
+
+        txtY.setToolTipText("");
+        txtY.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtYActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel17.setText("m");
+
+        jLabel18.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel18.setText("m");
+
+        jLabel19.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel19.setText("tv=");
+
+        txttv.setToolTipText("");
+        txttv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txttvActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel20.setText("m");
+
+        jLabel21.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel21.setText("ts=");
+
+        txtts.setToolTipText("");
+        txtts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txttsActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel22.setText("m");
+
+        jLabel23.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel23.setText("Vox=");
+
+        txtvox.setToolTipText("");
+        txtvox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtvoxActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel24.setText("m");
+
+        jLabel25.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel25.setText("Voy=");
+
+        txtvoy.setToolTipText("");
+        txtvoy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtvoyActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel26.setText("m");
+
+        txtV.setToolTipText("");
+        txtV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtVActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel27.setText("V=");
+
+        jLabel28.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel28.setText("m/s");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnbucar)
+                        .addGap(48, 48, 48)
+                        .addComponent(btnRegresar)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(68, 68, 68))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel27)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(txtV, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel28))
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel19))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel17))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtVx, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                                            .addComponent(txtVo)
+                                            .addComponent(txtD))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel12)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel10)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(txtvox, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel24)
+                                        .addGap(6, 6, 6)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(txtang, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel8))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel13)
+                                                .addGap(25, 25, 25)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(txth, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jLabel9))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(txtVy, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel14))))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel16)
+                                                .addGap(33, 33, 33)
+                                                .addComponent(txtY, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel18))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel21)
+                                                .addGap(33, 33, 33)
+                                                .addComponent(txtts, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel22))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel25)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtvoy, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel26))))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txttv, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel20)))))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtVo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(txtVx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12)
+                    .addComponent(txtVy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(txtX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(txtY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(txttv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20)
+                    .addComponent(txtts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(txtvox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24)
+                    .addComponent(txtvoy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(txtV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnRegresar)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnbucar)
+                        .addGap(21, 21, 21))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txthActionPerformed
+
+    private void txtVoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVoActionPerformed
+
+    private void txtDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDActionPerformed
+
+    private void txtangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtangActionPerformed
+
+    private void btnbucarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbucarActionPerformed
+        // TODO add your handling code here:
+
+        for(int i=0; i<5; i++){
+            if(txtVo.getText().equals("")){
+                calcularVo();
+            }
+            if(txtang.getText().equals("")){
+                calcularang();
+            }
+            if(txtD.getText().equals("")){
+                calcularD();
+            }
+            if(txth.getText().equals("")){
+                calcularH();
+            }
+            if(txtVx.getText().equals("")){
+                calcularVx();
+            }
+            if(txtVy.getText().equals("")){
+                calcularVy();
+            }
+            if(txtV.getText().equals("")){
+                calcularV();
+            }
+            if(txtX.getText().equals("")){
+                calcularX();
+            }
+            if(txtY.getText().equals("")){
+                calcularY();
+            }
+            if(txttv.getText().equals("")){
+                calcularTv();
+            }
+            if(txtts.getText().equals("")){
+                calcularTs();
+            }
+            if(txtvox.getText().equals("")){
+                calcularVox();
+            }
+            if(txtvoy.getText().equals("")){
+                calcularVoy();
+            }
+            
+        }
+
+        if(txtD.getText().equals("") || txtang.getText().equals("") || txth.getText().equals("") || txtVo.getText().equals("") || txtVy.getText().equals("") || txtVx.getText().equals("")){
+            JOptionPane.showMessageDialog( null,"NO HAY SUFICIENTES DATOS PARA EL CALCULO COMPLETO DE LOS COMPONENTES");
+        }
+    }//GEN-LAST:event_btnbucarActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        Main hola = new Main();
+        hola.setVisible(true);
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void txtVxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVxActionPerformed
+
+    private void txtVyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVyActionPerformed
+
+    private void txtXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtXActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtXActionPerformed
+
+    private void txtYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtYActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtYActionPerformed
+
+    private void txttvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttvActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txttvActionPerformed
+
+    private void txttsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txttsActionPerformed
+
+    private void txtvoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtvoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtvoxActionPerformed
+
+    private void txtvoyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtvoyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtvoyActionPerformed
+
+    private void txtVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +591,227 @@ public class MainMPV extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnbucar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField txtD;
+    private javax.swing.JTextField txtV;
+    private javax.swing.JTextField txtVo;
+    private javax.swing.JTextField txtVx;
+    private javax.swing.JTextField txtVy;
+    private javax.swing.JTextField txtX;
+    private javax.swing.JTextField txtY;
+    private javax.swing.JTextField txtang;
+    private javax.swing.JTextField txth;
+    private javax.swing.JTextField txtts;
+    private javax.swing.JTextField txttv;
+    private javax.swing.JTextField txtvox;
+    private javax.swing.JTextField txtvoy;
     // End of variables declaration//GEN-END:variables
+
+    private void calcularVo() {
+        float r1, r2;
+        if(!txtang.getText().equals("") && !txtvox.getText().equals(""))
+        {
+                float ang = Float.parseFloat(txtang.getText()), vox = Float.parseFloat(txtvox.getText());
+                r1 = (float) cos(ang);
+                r2 = vox/r1;
+                txtVo.setText(""+r2);
+        
+        }else if(!txtang.getText().equals("") && !txtvoy.getText().equals(""))
+        {
+                float ang = Float.parseFloat(txtang.getText()), voy = Float.parseFloat(txtvoy.getText());
+                r1 = (float) cos(ang);
+                r2 = voy/r1;
+                txtVo.setText(""+r2);
+        
+        }
+        else if(!txtVx.getText().equals("")){
+                txtVo.setText(""+txtVx.getText());
+        } 
+    }
+
+    private void calcularang() {
+        float r1, r2;
+        if(!txth.getText().equals("") && !txtD.getText().equals(""))
+        {
+                float h = Float.parseFloat(txth.getText()), d = Float.parseFloat(txtD.getText());
+                r1 = (4*h)/d;
+                r2 = (float) Math.toDegrees(Math.atan(r1));
+                txtang.setText(""+r2);
+        
+        }
+    }
+
+    private void calcularD() {
+        float r1, r2, r3, r4;
+        if(!txtVo.getText().equals("") && !txtang.getText().equals(""))
+        {
+                float vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
+                r1 = (float) ang *2;
+                r2 = (float) sin(r1);
+                r3 = (float) vo*vo * r2;
+                r4 = (float) (r3/9.8);
+                txtD.setText(""+r4);
+        
+        }
+    }
+
+    private void calcularH() {
+        float r1, r2;
+        if(!txtVo.getText().equals("") && !txtang.getText().equals(""))
+        {
+                float vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
+                r1 = (float) sin(ang);
+                r2 = (float) ((vo*vo * r1*r1)/(9.8*2));
+                txth.setText(""+r2);
+        
+        }
+    }
+
+    private void calcularVx() {
+        float r1, r2;
+        if(!txtVo.getText().equals("") && !txtang.getText().equals(""))
+        {
+                float vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
+                r1 = (float) cos(ang);
+                r2 = vo*r1;
+                txtVx.setText(""+r2);
+        
+        }
+    }
+
+    private void calcularVy() {
+        float r1, r2;
+        if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
+        {
+                float t = Float.parseFloat(txttv.getText()), vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
+                r1 = (float) cos(ang);
+                r2 = (float) ((vo*r1 )- 9.8*t);
+                txtVy.setText(""+r2);
+        
+        }
+    }
+
+    private void calcularX() {
+        float r1, r2;
+        if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
+        {
+                float tv = Float.parseFloat(txttv.getText()), vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
+                r1 = (float) cos(ang);
+                r2 = vo*r1*tv;
+                txtX.setText(""+r2);
+        
+        }
+    }
+
+    private void calcularY() {
+        float r1, r2;
+        if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
+        {
+                float tv = Float.parseFloat(txttv.getText()), vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
+                r1 = (float) sin(ang);
+                r2 = (float) ((vo*r1*tv)-(4.9*tv*tv));
+                txtY.setText(""+r2);
+        
+        }
+    }
+
+    private void calcularTv() {
+        float r1, r2;
+        if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
+        {
+                float vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
+                r1 = (float) sin(ang) * vo * 2;
+                r2 =  (float) (r1/ 9.8);
+                txttv.setText(""+r2);
+        
+        }
+    }
+
+    private void calcularTs() {
+       float r1, r2;
+        if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
+        {
+                float vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
+                r1 = (float) sin(ang) * vo;
+                r2 =  (float) (r1/ 9.8);
+                txtts.setText(""+r2);
+        
+        }
+    }
+
+    private void calcularVox() {
+        float r1, r2;
+        if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
+        {
+                float tv = Float.parseFloat(txttv.getText()), vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
+                r1 = (float) cos(ang);
+                r2 = vo*r1*tv;
+                txtvox.setText(""+r2);
+        
+        }
+    }
+
+    private void calcularVoy() {
+        float r1, r2;
+        if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
+        {
+                float tv = Float.parseFloat(txttv.getText()), vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
+                r1 = (float) sin(ang);
+                r2 = vo*r1*tv;
+                txtvoy.setText(""+r2);
+        
+        }
+    }
+
+    private void calcularV() {
+        float r1, r2;
+        if(!txtVx.getText().equals("") && !txtVy.getText().equals(""))
+        {
+                float vx = Float.parseFloat(txtVx.getText()), vy = Float.parseFloat(txtVy.getText());
+                r1 = (vx*vx)+(vy*vy);
+                r2 = (float) sqrt(r1);
+                txtV.setText(""+r2);
+        
+        }else if(!txtD.getText().equals("") && !txtang.getText().equals(""))
+        {
+                float D = Float.parseFloat(txtD.getText()), ang = Float.parseFloat(txtang.getText());
+                r1 = (float) ((9.8*D)/sin(ang));
+                r2 = (float) sqrt(r1);
+                txtV.setText(""+r2);
+        
+        }
+    }
+
+   
+
+
 }

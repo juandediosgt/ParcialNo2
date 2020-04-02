@@ -5,6 +5,9 @@
  */
 package parcialno2;
 
+import static java.lang.Math.sqrt;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Juan de Dios
@@ -33,7 +36,6 @@ public class MainCaidaLibre extends javax.swing.JFrame {
         txtVf = new javax.swing.JTextField();
         btnbucar = new javax.swing.JButton();
         lblMostrar = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -41,6 +43,10 @@ public class MainCaidaLibre extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,15 +78,12 @@ public class MainCaidaLibre extends javax.swing.JFrame {
             }
         });
 
-        btnbucar.setText("Comprobar Formulas para calcular");
+        btnbucar.setText("             CALCULAR            ");
         btnbucar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbucarActionPerformed(evt);
             }
         });
-
-        jLabel8.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel8.setText("Formula:");
 
         jLabel1.setFont(new java.awt.Font("Leelawadee", 1, 24)); // NOI18N
         jLabel1.setText("Caída Libre ");
@@ -107,6 +110,18 @@ public class MainCaidaLibre extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel7.setText("m/s");
+
+        jLabel8.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel8.setText("m/s");
+
+        jLabel9.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel9.setText("m");
+
+        jLabel10.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel10.setText("s");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,42 +129,51 @@ public class MainCaidaLibre extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtVo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtVf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtt, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txth, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
+                        .addGap(137, 137, 137)
                         .addComponent(btnbucar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(jLabel8))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(lblMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(90, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnRegresar)
-                .addGap(28, 28, 28))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnRegresar)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel4)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtt))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel3)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtVo)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel10))
+                                        .addGap(31, 31, 31)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel6)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txth, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel9))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(txtVf, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel8)))
+                                        .addGap(6, 6, 6))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addComponent(lblMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(177, 177, 177)
+                                .addComponent(jLabel1)))))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,21 +186,25 @@ public class MainCaidaLibre extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtVo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
                     .addComponent(txtVf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(txth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnbucar)
-                .addGap(1, 1, 1)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addGap(21, 21, 21)
                 .addComponent(lblMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnbucar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addComponent(btnRegresar)
-                .addGap(20, 20, 20))
+                .addGap(71, 71, 71))
         );
 
         pack();
@@ -200,6 +228,25 @@ public class MainCaidaLibre extends javax.swing.JFrame {
 
     private void btnbucarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbucarActionPerformed
         // TODO add your handling code here:
+        
+        for(int i=0; i<3; i++){
+            if(txtVo.getText().equals("")){
+            calcularVo();
+        }
+        if(txtVf.getText().equals("")){
+            calcularVf();
+        }
+        if(txtt.getText().equals("")){
+            calcularT();
+        }
+        if(txth.getText().equals("")){
+            calcularH();
+        }
+        }
+        
+        if(txtt.getText().equals("") || txtVf.getText().equals("") || txth.getText().equals("") || txtVo.getText().equals("")){
+            JOptionPane.showMessageDialog( null,"NO HAY SUFICIENTES DATOS PARA EL CALCULO COMPLETO DE LOS COMPONENTES");
+        }
     }//GEN-LAST:event_btnbucarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
@@ -244,16 +291,99 @@ public class MainCaidaLibre extends javax.swing.JFrame {
         });
     }
 
+    public void calcularVo(){
+        float r1, r2, r3;
+        if(!txtt.getText().equals("") && !txtVf.getText().equals(""))
+        {
+                float vf = Float.parseFloat(txtVf.getText()), t = Float.parseFloat(txtt.getText());
+                r1 = (float) (9.8*t);
+                r2 = vf - r1;
+                txtVo.setText(""+r2);
+        
+        }else if(!txth.getText().equals("") && !txtVf.getText().equals("")){
+                
+                float vf = Float.parseFloat(txtVf.getText()), h = Float.parseFloat(txth.getText());
+                r1 = (float) (2*9.8*h);
+                r2 = vf * vf;
+                r3 = (float) sqrt(r2 - r1);
+                txtVo.setText(""+r3);
+        }
+    }
+    
+    public void calcularVf(){
+        float r1, r2, r3;
+        if(!txtt.getText().equals("") && !txtVo.getText().equals(""))
+        {
+                float vo = Float.parseFloat(txtVo.getText()), t = Float.parseFloat(txtt.getText());
+                r1 = (float) (9.8*t);
+                r2 = vo + r1;
+                txtVf.setText(""+r2);
+        
+        }else if(!txth.getText().equals("") && !txtVo.getText().equals("")){
+                
+                float vo = Float.parseFloat(txtVo.getText()), h = Float.parseFloat(txth.getText());
+                r1 = (float) (2*9.8*h);
+                r2 = vo * vo;
+                r3 = (float) sqrt(r2 + r1);
+                txtVf.setText(""+r3);
+        }else if(!txtt.getText().equals("")){
+                
+                float t = Float.parseFloat(txtt.getText());
+                r1 = (float) (t * 9.8);
+                txtVf.setText(""+r1);
+        }
+    
+    }
+     public void calcularT(){
+        float r1, r2, r3;
+        if(!txtVf.getText().equals("") && !txtVo.getText().equals(""))
+        {
+                float vf = Float.parseFloat(txtVf.getText()), vo = Float.parseFloat(txtVo.getText());
+                r1 = vf-vo;
+                r2 = (float) (r1/9.8);
+                txtt.setText(""+r2);
+        
+        }else if(!txth.getText().equals("")){
+                
+                float h = Float.parseFloat(txth.getText());
+                r1 = 2 * h;
+                r2 = (float) (r1/9.8);
+                r3 = (float) sqrt(r2);
+                txtt.setText(""+r3);
+        }
+    }
+
+         public void calcularH(){
+        float r1, r2, r3;
+        if(!txtVo.getText().equals("") && !txtVf.getText().equals(""))
+        {
+                float vf = Float.parseFloat(txtVf.getText()), vo = Float.parseFloat(txtVo.getText());
+                r1 = (vf * vf) - (vo * vo);
+                r2 = (float) (r1 / (2*9.8));
+                txth.setText(""+r2);
+        
+        }else if(!txtt.getText().equals("")){
+                
+                float t= Float.parseFloat(txtt.getText());
+                r1 = (float) (9.8 * (t * t));
+                r2 = r1 /2;
+                txth.setText(""+r2);
+        }
+    }
+     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnbucar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lblMostrar;
     private javax.swing.JTextField txtVf;
     private javax.swing.JTextField txtVo;
