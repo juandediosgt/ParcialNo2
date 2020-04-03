@@ -6,6 +6,7 @@
 package parcialno2;
 
 import static java.lang.Math.cos;
+import static java.lang.Math.pow;
 import static java.lang.Math.sin;
 import static java.lang.Math.sqrt;
 import javax.swing.JOptionPane;
@@ -213,7 +214,7 @@ public class MainMPV extends javax.swing.JFrame {
         });
 
         jLabel20.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel20.setText("m");
+        jLabel20.setText("s");
 
         jLabel21.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         jLabel21.setText("ts=");
@@ -226,7 +227,7 @@ public class MainMPV extends javax.swing.JFrame {
         });
 
         jLabel22.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel22.setText("m");
+        jLabel22.setText("s");
 
         jLabel23.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         jLabel23.setText("Vox=");
@@ -239,7 +240,7 @@ public class MainMPV extends javax.swing.JFrame {
         });
 
         jLabel24.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel24.setText("m");
+        jLabel24.setText("m/s");
 
         jLabel25.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         jLabel25.setText("Voy=");
@@ -252,7 +253,7 @@ public class MainMPV extends javax.swing.JFrame {
         });
 
         jLabel26.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel26.setText("m");
+        jLabel26.setText("m/s");
 
         txtV.setToolTipText("");
         txtV.addActionListener(new java.awt.event.ActionListener() {
@@ -371,7 +372,7 @@ public class MainMPV extends javax.swing.JFrame {
                                 .addComponent(txttv, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel20)))))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -433,7 +434,7 @@ public class MainMPV extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(txtV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnRegresar)
@@ -465,7 +466,7 @@ public class MainMPV extends javax.swing.JFrame {
     private void btnbucarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbucarActionPerformed
         // TODO add your handling code here:
 
-        for(int i=0; i<5; i++){
+        for(int i=0; i<11; i++){
             if(txtVo.getText().equals("")){
                 calcularVo();
             }
@@ -637,25 +638,44 @@ public class MainMPV extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void calcularVo() {
-        float r1, r2;
+        float r1, r2, r3;
         if(!txtang.getText().equals("") && !txtvox.getText().equals(""))
         {
                 float ang = Float.parseFloat(txtang.getText()), vox = Float.parseFloat(txtvox.getText());
-                r1 = (float) cos(ang);
+                r1 = (float) cos(Math.toRadians(ang));
                 r2 = vox/r1;
                 txtVo.setText(""+r2);
         
-        }else if(!txtang.getText().equals("") && !txtvoy.getText().equals(""))
+        }else if(!txtang.getText().equals("") && !txtVy.getText().equals("") && !txttv.getText().equals(""))
         {
-                float ang = Float.parseFloat(txtang.getText()), voy = Float.parseFloat(txtvoy.getText());
-                r1 = (float) cos(ang);
-                r2 = voy/r1;
+                float t = Float.parseFloat(txttv.getText()), ang = Float.parseFloat(txtang.getText()), vy = Float.parseFloat(txtVy.getText());
+                r1 = (float) cos(Math.toRadians(ang));
+                r2 = (float) ((vy - (9.8*t))/r1);
                 txtVo.setText(""+r2);
+        
+        }
+        else if(!txtang.getText().equals("") && !txth.getText().equals(""))
+        {
+                float ang = Float.parseFloat(txtang.getText()), h = Float.parseFloat(txth.getText());
+                r1 = (float) pow(sin(Math.toRadians(ang)), 2);
+                r2 = (float) ((h *19.6)/r1);
+                r3 = (float) sqrt(r2);
+                txtVo.setText(""+r3);
+        
+        }else if(!txtang.getText().equals("") && !txtD.getText().equals(""))
+        {
+                float ang = Float.parseFloat(txtang.getText()), d = Float.parseFloat(txtD.getText());
+                r1 = (float) sin(Math.toRadians(ang*2));
+                r2 = (float) ((d *9.8)/r1);
+                r3 = (float) sqrt(r2);
+                txtVo.setText(""+r3);
         
         }
         else if(!txtVx.getText().equals("")){
                 txtVo.setText(""+txtVx.getText());
-        } 
+        }else if(!txtvox.getText().equals("")){
+                txtVo.setText(""+txtvox.getText());
+        }  
     }
 
     private void calcularang() {
@@ -676,7 +696,7 @@ public class MainMPV extends javax.swing.JFrame {
         {
                 float vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
                 r1 = (float) ang *2;
-                r2 = (float) sin(r1);
+                r2 = (float) sin(Math.toRadians(r1));
                 r3 = (float) vo*vo * r2;
                 r4 = (float) (r3/9.8);
                 txtD.setText(""+r4);
@@ -685,13 +705,15 @@ public class MainMPV extends javax.swing.JFrame {
     }
 
     private void calcularH() {
-        float r1, r2;
+        float r, r1, r2, r3;
         if(!txtVo.getText().equals("") && !txtang.getText().equals(""))
         {
                 float vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
-                r1 = (float) sin(ang);
-                r2 = (float) ((vo*vo * r1*r1)/(9.8*2));
-                txth.setText(""+r2);
+                r = (float) Math.sin(Math.toRadians(ang));               
+                r1 = (float) r*r;
+                r2 = (float) (vo*vo);
+                r3 = (float) ((r2*r1)/19.6);
+                txth.setText(""+r3);
         
         }
     }
@@ -701,11 +723,16 @@ public class MainMPV extends javax.swing.JFrame {
         if(!txtVo.getText().equals("") && !txtang.getText().equals(""))
         {
                 float vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
-                r1 = (float) cos(ang);
+                r1 = (float) cos(Math.toRadians(ang));
                 r2 = vo*r1;
                 txtVx.setText(""+r2);
         
         }
+        else if(!txtVo.getText().equals("")){
+                txtVx.setText(""+txtVo.getText());
+        }else if(!txtvox.getText().equals("")){
+                txtVx.setText(""+txtvox.getText());
+        } 
     }
 
     private void calcularVy() {
@@ -713,7 +740,7 @@ public class MainMPV extends javax.swing.JFrame {
         if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
         {
                 float t = Float.parseFloat(txttv.getText()), vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
-                r1 = (float) cos(ang);
+                r1 = (float) cos(Math.toRadians(ang));
                 r2 = (float) ((vo*r1 )- 9.8*t);
                 txtVy.setText(""+r2);
         
@@ -725,7 +752,7 @@ public class MainMPV extends javax.swing.JFrame {
         if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
         {
                 float tv = Float.parseFloat(txttv.getText()), vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
-                r1 = (float) cos(ang);
+                r1 = (float) cos(Math.toRadians(ang));
                 r2 = vo*r1*tv;
                 txtX.setText(""+r2);
         
@@ -733,23 +760,25 @@ public class MainMPV extends javax.swing.JFrame {
     }
 
     private void calcularY() {
-        float r1, r2;
+        float r1, r2, r3, r4;
         if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
         {
                 float tv = Float.parseFloat(txttv.getText()), vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
-                r1 = (float) sin(ang);
-                r2 = (float) ((vo*r1*tv)-(4.9*tv*tv));
-                txtY.setText(""+r2);
+                r1 = (float) (vo * sin(Math.toRadians(ang)));
+                r2 = (float) r1*tv;
+                r3 = (float) (4.9*tv*tv); 
+                r4 = r2 - r3;
+                txtY.setText(""+r4);
         
         }
     }
 
     private void calcularTv() {
         float r1, r2;
-        if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
+        if(!txtVo.getText().equals("") && !txtang.getText().equals(""))
         {
                 float vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
-                r1 = (float) sin(ang) * vo * 2;
+                r1 = (float) sin(Math.toRadians(ang)) * vo * 2;
                 r2 =  (float) (r1/ 9.8);
                 txttv.setText(""+r2);
         
@@ -761,7 +790,7 @@ public class MainMPV extends javax.swing.JFrame {
         if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
         {
                 float vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
-                r1 = (float) sin(ang) * vo;
+                r1 = (float) sin(Math.toRadians(ang)) * vo;
                 r2 =  (float) (r1/ 9.8);
                 txtts.setText(""+r2);
         
@@ -770,11 +799,11 @@ public class MainMPV extends javax.swing.JFrame {
 
     private void calcularVox() {
         float r1, r2;
-        if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
+        if(!txtVo.getText().equals("") && !txtang.getText().equals(""))
         {
                 float tv = Float.parseFloat(txttv.getText()), vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
-                r1 = (float) cos(ang);
-                r2 = vo*r1*tv;
+                r1 = (float) cos(Math.toRadians(ang));
+                r2 = vo*r1;
                 txtvox.setText(""+r2);
         
         }
@@ -782,11 +811,11 @@ public class MainMPV extends javax.swing.JFrame {
 
     private void calcularVoy() {
         float r1, r2;
-        if(!txtVo.getText().equals("") && !txtang.getText().equals("") && !txttv.getText().equals(""))
+        if(!txtVo.getText().equals("") && !txtang.getText().equals(""))
         {
                 float tv = Float.parseFloat(txttv.getText()), vo = Float.parseFloat(txtVo.getText()), ang = Float.parseFloat(txtang.getText());
-                r1 = (float) sin(ang);
-                r2 = vo*r1*tv;
+                r1 = (float) sin(Math.toRadians(ang));
+                r2 = vo*r1;
                 txtvoy.setText(""+r2);
         
         }
